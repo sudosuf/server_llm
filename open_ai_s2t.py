@@ -36,7 +36,7 @@ pipe = pipeline(
 #dataset = load_dataset("distil-whisper/librispeech_long", "clean", split="validation")
 #sample = dataset[0]["audio"]
 time_start = time.time()
-data, samplerate = sf.read('test_audio_neft_termin_(1).wav') # вытаскиваем данные из аудио файла
+data, samplerate = sf.read('test_audio_neft_termin_(1).wav') # вытаскиваем данные из аудио файла mono 24kHz
 result = pipe(data) # передаем данные из аудио файла/ Если передовать напрямую аудиофайл то вылезит ошибка с распознаванием файла
 time_end = time.time()
 print(result["text"])
